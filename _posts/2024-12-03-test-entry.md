@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Test Entry
 description: Test of posting a blog post
 author: Gabriel Putnam
