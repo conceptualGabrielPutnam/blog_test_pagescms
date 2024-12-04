@@ -80,20 +80,14 @@ body {
 }
 </style>
 <script type="text/javascript">
-  function read_posts_dir_files(){
-    const fs = require('fs');
-  
-    const directoryPath = './_posts';
-  
-    fs.readdir(directoryPath, (err, files) => {
-      if (err) {
-        console.error('Error reading directory:', err);
-        return;
-      }
-    
-      console.log('Files in directory:', files);
-    });
+  function reqListener() {
+    console.log(this.responseText);
   }
+  
+  const req = new XMLHttpRequest();
+  req.addEventListener("load", reqListener);
+  req.open("GET", "./_posts");
+  req.send();
 </script>
 </head>
 <body onload="read_posts_dir_files()">
