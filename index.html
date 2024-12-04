@@ -79,8 +79,24 @@ body {
   text-align: center;
 }
 </style>
+<script>
+  function read_posts_dir_files(){
+    const fs = require('fs');
+  
+    const directoryPath = './_posts';
+  
+    fs.readdir(directoryPath, (err, files) => {
+      if (err) {
+        console.error('Error reading directory:', err);
+        return;
+      }
+    
+      console.log('Files in directory:', files);
+    });
+  }
+</script>
 </head>
-<body>
+<body onload="read_posts_dir_files()">
 
 <div class="header">
   <h1>Header</h1>
